@@ -11,10 +11,10 @@ class UsuarioController {
         throw new Error('Dados de entrada inválidos.');
       }
       const usuario = await Usuario.create({ nome, email, senha: await bcrypt.hash(senha, 10) });
-      res.status(200).json({
+      res.status(201).json({
         mensagem: `Usuário ${usuario.nome} adicionado com sucesso.`,
         usuario,
-        status: 200,
+        status: 201,
       });
     } catch (error) {
       if (error.message === 'Dados de entrada inválidos.') {
@@ -57,9 +57,9 @@ class UsuarioController {
       }
       res.status(200).json(usuario);
     } catch (error) {
-      if (error.messagem === `Não existe Usuário com o id ${id}`) {
+      if (error.message === `Não existe Usuário com o id ${id}`) {
         res.status(400).json({
-          mensagem: error.messagem,
+          mensagem: error.message,
           status: 400,
         });
       } else {
@@ -90,9 +90,9 @@ class UsuarioController {
         status: 200,
       });
     } catch (error) {
-      if (error.messagem === `Não existe Usuário com o id ${id}`) {
+      if (error.message === `Não existe Usuário com o id ${id}`) {
         res.status(400).json({
-          mensagem: error.messagem,
+          mensagem: error.message,
           status: 400,
         });
       } else {
@@ -122,9 +122,9 @@ class UsuarioController {
         status: 200,
       });
     } catch (error) {
-      if (error.messagem === `Não existe Usuário com o id ${id}`) {
+      if (error.message === `Não existe Usuário com o id ${id}`) {
         res.status(400).json({
-          mensagem: error.messagem,
+          mensagem: error.message,
           status: 400,
         });
       } else {
