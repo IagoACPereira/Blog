@@ -5,15 +5,15 @@ API Rest de Blog.
 > Para os endpoints de manipulação de dados será necessário estar com o token gerado pela rota de login no Header.
 
 # Índice
-1. [Login](## Login)
+1. [Login](#Login)
     - []()
-2. [Usuários](## Usuários)
-    - []()
-    - []()
+2. [Usuários](#Usuários)
     - []()
     - []()
     - []()
-3. [Postagens](## Postagens)
+    - []()
+    - []()
+3. [Postagens](#Postagens)
     - []()
     - []()
     - []()
