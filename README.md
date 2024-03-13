@@ -5,23 +5,23 @@ API Rest de Blog.
 > Para os endpoints de manipulação de dados será necessário estar com o token gerado pela rota de login no Header.
 
 # Índice
-1. [Login](##Login)
+1. [Login](## Login)
     - []()
-2. [Usuários](##Usuários)
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-3. [Postagens](##Postagens)
+2. [Usuários](## Usuários)
     - []()
     - []()
     - []()
     - []()
     - []()
+3. [Postagens](## Postagens)
     - []()
     - []()
-4. [Comentários](##Comentários)
+    - []()
+    - []()
+    - []()
+    - []()
+    - []()
+4. [Comentários](## Comentários)
     - []()
     - []()
     - []()
@@ -30,7 +30,7 @@ API Rest de Blog.
     - []()
     - []()
 ---
-##Login
+## Login
 **Método**: POST
 **Endpoint**: `/login`  
 **Requisição**: 
@@ -48,7 +48,7 @@ API Rest de Blog.
 }
 ```
 ---
-##Usuários 
+## Usuários 
 > Diferente dos demais a rota de usuários só é permitido cadastrar um novo usuário, os demais metodos HTTP será necessário o token de autorização no Header.
 
 ### _[Adicionar]_
@@ -164,7 +164,7 @@ API Rest de Blog.
 }
 ```
 ---
-##Postagens
+## Postagens
 ### _[Adicionar]_
 **Método**: POST
 **Endpoint**: `/postagens`
