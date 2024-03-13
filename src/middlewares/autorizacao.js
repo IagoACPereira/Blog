@@ -22,16 +22,10 @@ function autorizacao(req, res, next) {
         mensagem: 'Token expirado.',
         status: 401,
       });
-    } else if (error.message === 'invalid token') {
+    } else if (error.message === 'invalid token' || error.message === 'invalid signature') {
       res.status(401).json({
         mensagem: 'Token inválido.',
         status: 401,
-      });
-    } else {
-      res.status(500).json({
-        mensagem: 'Ocorreu um erro no servidor.',
-        erro: error.message,
-        status: 500,
       });
     }
   }

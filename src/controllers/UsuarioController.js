@@ -23,12 +23,6 @@ class UsuarioController {
           erros: resultado.array(),
           status: 400,
         });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
-        });
       }
     }
   }
@@ -37,13 +31,7 @@ class UsuarioController {
     try {
       const usuarios = await Usuario.findAndCountAll();
       res.status(200).json(usuarios);
-    } catch (error) {
-      res.status(500).json({
-        mensagem: 'Ocorreu um erro no servidor.',
-        erro: error.message,
-        status: 500,
-      });
-    }
+    } finally {}
   }
 
   static async exibirUm(req, res) {
@@ -61,12 +49,6 @@ class UsuarioController {
         res.status(400).json({
           mensagem: error.message,
           status: 400,
-        });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
         });
       }
     }
@@ -95,12 +77,6 @@ class UsuarioController {
           mensagem: error.message,
           status: 400,
         });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
-        });
       }
     }
   }
@@ -126,12 +102,6 @@ class UsuarioController {
         res.status(400).json({
           mensagem: error.message,
           status: 400,
-        });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
         });
       }
     }
