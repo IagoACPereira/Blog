@@ -30,7 +30,7 @@ API Rest de Blog.
     - []()
     - []()
 ---
-## Login
+##Login
 **Método**: POST
 **Endpoint**: `/login`  
 **Requisição**: 
@@ -48,7 +48,7 @@ API Rest de Blog.
 }
 ```
 ---
-## Usuários 
+##Usuários 
 > Diferente dos demais a rota de usuários só é permitido cadastrar um novo usuário, os demais metodos HTTP será necessário o token de autorização no Header.
 
 ### _[Adicionar]_
@@ -61,6 +61,7 @@ API Rest de Blog.
 | **nome** | _String_ | Nome do usuário |
 | **email** | _String_ | Email do usuário |
 | **senha** | _String_ | Senha do usuário |
+
 **Resposta**: (201 Created)
 ```json
 {
@@ -81,6 +82,7 @@ API Rest de Blog.
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ``` json
 {
@@ -114,6 +116,7 @@ API Rest de Blog.
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -136,6 +139,7 @@ API Rest de Blog.
 | **nome** | _String_ | Nome do usuário |
 | **email** | _String_ | Email do usuário |
 | **senha** | _String_ | Senha do usuário |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -151,6 +155,7 @@ API Rest de Blog.
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -159,7 +164,7 @@ API Rest de Blog.
 }
 ```
 ---
-## Postagens
+##Postagens
 ### _[Adicionar]_
 **Método**: POST
 **Endpoint**: `/postagens`
@@ -174,6 +179,7 @@ API Rest de Blog.
 | **conteudo** | _Text_ | Conteúdo da postagem |
 | **dataDeCriacao** | _String_ | Data de Criação da postagem |
 | **usuarioId** | _Integer_ | ID do usuário que fez a postagem |
+
 **Resposta**: (201 Created)
 ```json
 {
@@ -194,6 +200,7 @@ API Rest de Blog.
 ### _[Exibir Todos]_
 **Método**: GET
 **Endpoint**: `/postagens`
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -244,6 +251,7 @@ API Rest de Blog.
 
 **Método**: GET
 **Endpoint**: `/postagens/1`
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -276,6 +284,7 @@ API Rest de Blog.
 | **conteudo** | _Text_ | Conteúdo da postagem |
 | **dataDeCriacao** | _String_ | Data de Criação da postagem |
 | **usuarioId** | _Integer_ | ID do usuário que fez a postagem |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -323,6 +332,7 @@ API Rest de Blog.
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -364,7 +374,7 @@ API Rest de Blog.
 ```
 ---
 
-## Comentários
+##Comentários
 ### _[Adicionar]_
 **Método**: POST
 **Endpoint**: `/comentarios`
