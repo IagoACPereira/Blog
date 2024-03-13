@@ -52,12 +52,6 @@ class AuthController {
           erros: resultado.array(),
           status: 400,
         });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
-        });
       }
     }
   }

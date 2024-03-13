@@ -22,10 +22,10 @@ class PostagemController {
         dataDeCriacao,
         usuarioId,
       });
-      res.status(200).json({
+      res.status(201).json({
         mensagem: 'Postagem adicionada com sucesso.',
         postagem,
-        status: 200,
+        status: 201,
       });
     } catch (error) {
       if (error.message === 'Dados de entrada inválidos.') {
@@ -34,16 +34,10 @@ class PostagemController {
           erros: resultado.array(),
           status: 400,
         });
-      } else if (error.message === 'insert or update on table "postagens" violates foreign key constraint "postagens_usuarioId_fkey"') {
+      } else if (error.message === 'insert or update on table "postagens" violates foreign key constraint "postagens_usuarioId_fkey"' || error.message === 'inserção ou atualização em tabela "postagens" viola restrição de chave estrangeira "postagens_usuarioId_fkey"') {
         res.status(400).json({
           mensagem: `Não existe Usuário com o id ${usuarioId}`,
           status: 400,
-        });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
         });
       }
     }
@@ -59,13 +53,7 @@ class PostagemController {
         },
       });
       res.status(200).json(postagens);
-    } catch (error) {
-      res.status(500).json({
-        mensagem: 'Ocorreu um erro no servidor.',
-        erro: error.message,
-        status: 500,
-      });
-    }
+    } finally {}
   }
 
   static async exibirUm(req, res) {
@@ -98,12 +86,6 @@ class PostagemController {
         res.status(400).json({
           mensagem: error.message,
           status: 400,
-        });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
         });
       }
     }
@@ -142,12 +124,6 @@ class PostagemController {
           mensagem: error.message,
           status: 400,
         });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
-        });
       }
     }
   }
@@ -173,12 +149,6 @@ class PostagemController {
         res.status(400).json({
           mensagem: error.message,
           status: 400,
-        });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
         });
       }
     }
@@ -206,12 +176,6 @@ class PostagemController {
           mensagem: error.message,
           status: 400,
         });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
-        });
       }
     }
   }
@@ -237,12 +201,6 @@ class PostagemController {
         res.status(400).json({
           mensagem: error.message,
           status: 400,
-        });
-      } else {
-        res.status(500).json({
-          mensagem: 'Ocorreu um erro no servidor.',
-          erro: error.message,
-          status: 500,
         });
       }
     }

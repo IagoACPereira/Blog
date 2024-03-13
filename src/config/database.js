@@ -9,9 +9,8 @@ function conexaoDb() {
     sequelize.authenticate();
     // eslint-disable-next-line no-console
     console.log('Conexão com o banco ok.');
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log('Conexão com o banco nok.');
+  } finally {
+    
   }
 }
 conexaoDb();
