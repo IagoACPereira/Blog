@@ -8,26 +8,26 @@ API Rest de Blog.
 1. [Login](#Login)
 2. [Usuários](#Usuários)
     - [Adicionar Usuário](#Adicionar-Usuário)
-    - []()
-    - []()
-    - []()
-    - []()
+    - [Exibir Todos Usuários](#Exibir-Todos-Usuários)
+    - [Exibir Um Usuário](#Exibir-Um-Usuário)
+    - [Alterar Usuário](#Alterar-Usuário)
+    - [Deletar Usuário](#Deletar-Usuário)
 3. [Postagens](#Postagens)
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
+    - [Adicionar Postagem](#Adicionar-Postagem)
+    - [Exibir Todas Postagens](#Exibir-Todas-Postagens)
+    - [Exibir Uma Postagem](#Exibir-Uma-Postagem)
+    - [Atualizar Postagem](#Atualizar-Postagem)
+    - [Curtir Postagem](#Curtir-Postagem)
+    - [Descurtir Postagem](#Descurtir-Postagem)
+    - [Deletar Postagem](#Deletar-Postagem)
 4. [Comentários](#Comentários)
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
+    - [Adicionar Comentário](#Adicionar-Comentário)
+    - [Exibir Todos Comentários](#Exibir-Todos-Comentários)
+    - [Exibir Um Comentário](#Exibir-Um-Comentário)
+    - [Atualizar Comentário](#Atualizar-Comentário)
+    - [Curtir Comentário](#Curtir-Comentário)
+    - [Descurtir Comentário](#Descurtir-Comentário)
+    - [Deletar Comentário](#Deletar-Comentário)
 ---
 ## Login
 **Método**: POST
@@ -73,7 +73,7 @@ API Rest de Blog.
 	"status": 201
 }
 ```
-### _[Exibir Todos]_
+### _[Exibir Todos Usuários]_
 **Método**: GET
 **Endpoint**: `/usuarios`
 **Header**:
@@ -106,7 +106,7 @@ API Rest de Blog.
 	]
 }
 ```
-### _[Exibir Um]_
+### _[Exibir Um Usuário]_
 **Método**: GET
 **Endpoint**: `/usuarios/1`
 **Header**:
@@ -122,7 +122,7 @@ API Rest de Blog.
 	"senha": "$2a$10$wez/rSZKaXNDyqQfLl8gaO/o3Zq5Xe87A4mKYXzORHx2FWobJIg/2"
 }
 ```
-### _[Alterar]_
+### _[Alterar Usuário]_
 **Método**: PUT
 **Endpoint**: `/usuarios/1`
 **Header**:
@@ -143,7 +143,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Deletar]_
+### _[Deletar Usuário]_
 **Método**: DELETE
 **Endpoint**: `/usuarios/1`
 **Header**:
@@ -159,7 +159,7 @@ API Rest de Blog.
 ```
 ---
 ## Postagens
-### _[Adicionar]_
+### _[Adicionar Postagem]_
 **Método**: POST
 **Endpoint**: `/postagens`
 **Header**:
@@ -190,7 +190,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Exibir Todos]_
+### _[Exibir Todas Postagens]_
 **Método**: GET
 **Endpoint**: `/postagens`
 **Resposta**: (200 OK)
@@ -238,7 +238,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Exibir Um]_
+### _[Exibir Uma Postagem]_
 > Os comentários das postagens aparecerão quando o usuário solicitar apenas uma postagem.
 
 **Método**: GET
@@ -261,7 +261,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Atualizar]_
+### _[Atualizar Postagem]_
 **Método**: PUT
 **Endpoint**: `/postagens/1`
 **Header**:
@@ -347,7 +347,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Deletar]_
+### _[Deletar Postagem]_
 **Método**: DELETE
 **Endpoint**: `/postagens/1`
 **Header**:
@@ -364,7 +364,7 @@ API Rest de Blog.
 ---
 
 ## Comentários
-### _[Adicionar]_
+### _[Adicionar Comentário]_
 **Método**: POST
 **Endpoint**: `/comentarios`
 **Header**:
@@ -396,7 +396,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Exibir Todos]_
+### _[Exibir Todos Comentários]_
 **Método**: GET
 **Endpoint**: `/comentarios`
 **Resposta**: (200 OK)
@@ -426,7 +426,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Exibir Um]_
+### _[Exibir Um Comentário]_
 **Método**: GET
 **Endpoint**: `/comentarios/1`
 **Resposta**: (200 OK)
@@ -442,7 +442,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Atualizar]_
+### _[Atualizar Comentário]_
 **Método**: PUT
 **Endpoint**: `/comentarios/1`
 **Header**:
@@ -519,7 +519,7 @@ API Rest de Blog.
 }
 ```
 
-### _[Deletar]_
+### _[Deletar Comentário]_
 **Método**: DELETE
 **Endpoint**: `/comentarios/1`
 **Header**:
