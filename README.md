@@ -30,8 +30,11 @@ API Rest de Blog.
     - [Deletar Comentário](#Deletar-Comentário)
 ---
 ## Login
+
 **Método**: POST
+
 **Endpoint**: `/login`  
+
 **Requisição**: 
 | Dados | Tipo | Descrição |
 |-|-|-|
@@ -46,20 +49,26 @@ API Rest de Blog.
 	"status": 200
 }
 ```
+
 ---
+
 ## Usuários 
+
 > Diferente dos demais a rota de usuários só é permitido cadastrar um novo usuário, os demais metodos HTTP será necessário o token de autorização no Header.
 
 ### _[Adicionar Usuário]_
 
 **Método**: POST
+
 **Endpoint**: `/usuarios`
+
 **Requisição**: 
 | Dados | Tipo | Descrição |
 |-|-|-|
 | **nome** | _String_ | Nome do usuário |
 | **email** | _String_ | Email do usuário |
 | **senha** | _String_ | Senha do usuário |
+
 **Resposta**: (201 Created)
 ```json
 {
@@ -73,13 +82,18 @@ API Rest de Blog.
 	"status": 201
 }
 ```
+
 ### _[Exibir Todos Usuários]_
+
 **Método**: GET
+
 **Endpoint**: `/usuarios`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ``` json
 {
@@ -106,13 +120,18 @@ API Rest de Blog.
 	]
 }
 ```
+
 ### _[Exibir Um Usuário]_
+
 **Método**: GET
+
 **Endpoint**: `/usuarios/1`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -122,19 +141,25 @@ API Rest de Blog.
 	"senha": "$2a$10$wez/rSZKaXNDyqQfLl8gaO/o3Zq5Xe87A4mKYXzORHx2FWobJIg/2"
 }
 ```
+
 ### _[Alterar Usuário]_
+
 **Método**: PUT
+
 **Endpoint**: `/usuarios/1`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Requisição**: 
 | Dados | Tipo | Descrição |
 |-|-|-|
 | **nome** | _String_ | Nome do usuário |
 | **email** | _String_ | Email do usuário |
 | **senha** | _String_ | Senha do usuário |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -144,12 +169,16 @@ API Rest de Blog.
 ```
 
 ### _[Deletar Usuário]_
+
 **Método**: DELETE
+
 **Endpoint**: `/usuarios/1`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -157,15 +186,22 @@ API Rest de Blog.
 	"status": 200
 }
 ```
+
 ---
+
 ## Postagens
+
 ### _[Adicionar Postagem]_
+
 **Método**: POST
+
 **Endpoint**: `/postagens`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Requisição**: 
 | Dados | Tipo | Descrição |
 |-|-|-|
@@ -173,6 +209,7 @@ API Rest de Blog.
 | **conteudo** | _Text_ | Conteúdo da postagem |
 | **dataDeCriacao** | _String_ | Data de Criação da postagem |
 | **usuarioId** | _Integer_ | ID do usuário que fez a postagem |
+
 **Resposta**: (201 Created)
 ```json
 {
@@ -191,8 +228,11 @@ API Rest de Blog.
 ```
 
 ### _[Exibir Todas Postagens]_
+
 **Método**: GET
+
 **Endpoint**: `/postagens`
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -239,10 +279,14 @@ API Rest de Blog.
 ```
 
 ### _[Exibir Uma Postagem]_
+
 > Os comentários das postagens aparecerão quando o usuário solicitar apenas uma postagem.
 
+
 **Método**: GET
+
 **Endpoint**: `/postagens/1`
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -262,12 +306,16 @@ API Rest de Blog.
 ```
 
 ### _[Atualizar Postagem]_
+
 **Método**: PUT
+
 **Endpoint**: `/postagens/1`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Requisição**: 
 | Dados | Tipo | Descrição |
 |-|-|-|
@@ -275,6 +323,7 @@ API Rest de Blog.
 | **conteudo** | _Text_ | Conteúdo da postagem |
 | **dataDeCriacao** | _String_ | Data de Criação da postagem |
 | **usuarioId** | _Integer_ | ID do usuário que fez a postagem |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -284,12 +333,16 @@ API Rest de Blog.
 ```
 
 ### _[Curtir Postagem]_
+
 **Método**: PUT
+
 **Endpoint**: `/postagens/1/curtir`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -316,12 +369,16 @@ API Rest de Blog.
 ```
 
 ### _[Descurtir Postagem]_
+
 **Método**: PUT
+
 **Endpoint**: `/postagens/1/descurtir`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -330,6 +387,7 @@ API Rest de Blog.
 }
 ```
 > _GET após descurtir_
+
 ```json
 {
 	"id": 1,
@@ -348,12 +406,16 @@ API Rest de Blog.
 ```
 
 ### _[Deletar Postagem]_
+
 **Método**: DELETE
+
 **Endpoint**: `/postagens/1`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -361,16 +423,22 @@ API Rest de Blog.
 	"status": 200
 }
 ```
+
 ---
 
 ## Comentários
+
 ### _[Adicionar Comentário]_
+
 **Método**: POST
+
 **Endpoint**: `/comentarios`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Requisição**: 
 | Dados | Tipo | Descrição |
 |-|-|-|
@@ -379,6 +447,7 @@ API Rest de Blog.
 | **dataDeCriacao** | _String_ | Data de Criação do comentário |
 | **usuarioId** | _Integer_ | ID do usuário que fez o comentário |
 | **postagemId** | _Integer_ | ID da postagem onde foi feito o comentário |
+
 **Resposta**: (201 Created)
 ```json
 {
@@ -397,8 +466,11 @@ API Rest de Blog.
 ```
 
 ### _[Exibir Todos Comentários]_
+
 **Método**: GET
+
 **Endpoint**: `/comentarios`
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -427,8 +499,11 @@ API Rest de Blog.
 ```
 
 ### _[Exibir Um Comentário]_
+
 **Método**: GET
+
 **Endpoint**: `/comentarios/1`
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -443,12 +518,16 @@ API Rest de Blog.
 ```
 
 ### _[Atualizar Comentário]_
+
 **Método**: PUT
+
 **Endpoint**: `/comentarios/1`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Requisição**: 
 | Dados | Tipo | Descrição |
 |-|-|-|
@@ -457,6 +536,7 @@ API Rest de Blog.
 | **dataDeCriacao** | _String_ | Data de Criação do comentário |
 | **usuarioId** | _Integer_ | ID do usuário que fez o comentário |
 | **postagemId** | _Integer_ | ID da postagem onde foi feito o comentário |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -466,12 +546,16 @@ API Rest de Blog.
 ```
 
 ### _[Curtir Comentário]_
+
 **Método**: PUT
+
 **Endpoint**: `/comentarios/1/curtir`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
@@ -479,7 +563,9 @@ API Rest de Blog.
 	"status": 200
 }
 ```
+
 > _GET após curtir_
+
 ```json
 {
 	"id": 1,
@@ -493,20 +579,26 @@ API Rest de Blog.
 ```
 
 ### _[Descurtir Comentário]_
+
 **Método**: PUT
+
 **Endpoint**: `/comentarios/1/descurtir`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
 	"mensagem": "Você descurtiu o comentário.",
 	"status": 200
 }
+
 ```
 > _GET após descurtir_
+
 ```json
 {
 	"id": 1,
@@ -520,12 +612,16 @@ API Rest de Blog.
 ```
 
 ### _[Deletar Comentário]_
+
 **Método**: DELETE
+
 **Endpoint**: `/comentarios/1`
+
 **Header**:
 | Dados | Values | Descrição |
 |-|-|-|
 | **Authorization** | _Token JWT_ | Token gerado no login |
+
 **Resposta**: (200 OK)
 ```json
 {
